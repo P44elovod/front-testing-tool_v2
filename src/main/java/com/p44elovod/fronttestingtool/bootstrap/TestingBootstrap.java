@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @Component
@@ -34,7 +33,7 @@ public class TestingBootstrap implements ApplicationListener<ContextRefreshedEve
     @Transactional
     public void onApplicationEvent(ContextRefreshedEvent event) {
         testingRepository.saveAll(getTesting());
-     
+
 
         log.info("===================засеввало" + getTesting());
 

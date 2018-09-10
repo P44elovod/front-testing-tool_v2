@@ -1,15 +1,13 @@
 package com.p44elovod.fronttestingtool.models;
 
-import lombok.Getter;
-import lombok.Setter;
 
+import lombok.Data;
 import javax.persistence.*;
+import java.time.LocalDate;
 
 
-@Getter
-@Setter
+@Data
 @Entity
-@Table(name = "testing")
 public class Testing {
 
     @Id
@@ -22,5 +20,17 @@ public class Testing {
     @OneToOne(cascade = CascadeType.ALL)
     private Device device;
 
+    private String note;
+    private LocalDate date;
+
+    public void setUser(User user) {
+        this.user = user;
+        user.setTesting(this);
+    }
+
+    public void setDevice(Device device) {
+        this.device = device;
+        device.setTesting(this);
+    }
 
 }
