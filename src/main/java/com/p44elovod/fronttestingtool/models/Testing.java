@@ -33,4 +33,8 @@ public class Testing {
         device.setTesting(this);
     }
 
+    public Testing(User user, Device device) {
+        this.user = user;
+        this.device = device;
+    }
 }

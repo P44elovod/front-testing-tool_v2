@@ -40,21 +40,23 @@ public class TestingBootstrap implements ApplicationListener<ContextRefreshedEve
     }
 
 
-
     private List<Testing> getTesting() {
+        List<User> users = new ArrayList<>();
+        userRepository.findAll().forEach(users::add);
 
+        List<Device> devices = new ArrayList<>();
+        deviceRepository.findAll().forEach(devices::add);
         List<Testing> testings = new ArrayList<>();
 
+for (int i = 0; i < users.size(); i++ ){
+    testings.add(new Testing(users.get(i), devices.get(i) ));
 
-        User user = new User();
-        user.setUserName("user1");
-        Device device = new Device();
-        device.setDeviceName("Device 1");
 
-        Testing testing = new Testing();
-        testing.setUser(user);
-        testing.setDevice(device);
-        testings.add(testing);
+}
+//        User user = new User();
+//        user.setUserName("user1");
+//        Device device = new Device();
+//        device.setDeviceName("Device 1");
 
 
         return testings;
