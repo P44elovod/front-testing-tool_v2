@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
     <title>Bootstrap Theme The Band</title>
@@ -153,6 +153,9 @@ textarea {
       resize: none;
   }
 
+
+
+
     </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -188,9 +191,8 @@ textarea {
     </div>
 </nav>
 
-
 <div id="band" class="container text-center">
-    <h3>TESTINGS SCHEDULE</h3>
+    <h3>TESTINGS FORM</h3>
     <p><em>We love music!</em></p>
     <p>We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -199,59 +201,26 @@ textarea {
         officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
         aliquip ex ea commodo consequat.</p>
-    <br>
-    <table class="table">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Responsible person</th>
-            <th scope="col">Device</th>
-            <th scope="col">Founded</th>
-            <th scope="col">Not Founded</th>
-            <th scope="col">Сharging</th>
-        </tr>
-        </thead>
-        <tr th:each="testings: ${testings}" align="left">
-            <th scope="row" th:text="${testings.id}">1</th>
-            <td th:text="${testings.user.userName}">...</td>
-            <td th:text="${testings.device.deviceName}">...</td>
-            <td align="center">-</td>
-            <td align="center">-</td>
-            <td><a href="#" th:href="@{/#}">edit</a></td>
-        </tr>
-    </table>
+
+
+    <div class="form-check form-check-inline">
+        <p><b>Is bug founded?</b></p>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"
+               style="margin: 5px 5px 15px 15px">
+        <label class="form-check-label" for="inlineRadio1">Y</label>
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"
+               style="margin: 5px 5px 15px 15px">
+        <label class="form-check-label" for="inlineRadio2">N</label>
+    </div>
+    <form>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Enter Your Report</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+    </form>
+
+
 </div>
-
-<div id="users" class="container text-center">
-    <h3>USERS</h3>
-    <table class="table">
-        <thead class="thead-dark">
-
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Cell Phone</th>
-            <th scope="col">Office e-mail</th>
-            <th scope="col">Personal e-mail</th>
-            <th scope="col">Birthday</th>
-
-        </tr>
-        </thead>
-        <tr th:each="users: ${users}" align="left">
-            <th scope="row" th:text="${users.id}">1</th>
-
-
-            <td th:text="${users.userName}">...</td>
-            <td th:text="${users.cellPhone}">...</td>
-            <td th:text="${users.workEmail}">...</td>
-            <td th:text="${users.persEmail}">...</td>
-            <td th:text="${users.birthDate}">...</td>
-
-            <td><a href="#" th:href="@{/#}">edit</a></td>
-        </tr>
-    </table>
-</div>
-
 
 <!-- Footer -->
 <footer class="text-center">
@@ -291,6 +260,9 @@ $(document).ready(function(){
     } // End if
   });
 })
+
+
+
 
 
 </script>
